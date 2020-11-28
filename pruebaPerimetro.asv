@@ -1,0 +1,49 @@
+% prueba_perimetro
+% probamos la función del perímetro
+close all
+
+x1= [0 0]'; x2 = [1/2 1/2]; x3 = [0 1]; x3 = [-1/2 1/2];
+
+V = [0 1/2 0 -1/2 ; 0 1/2 1 1/2];
+
+% Gráfica del polígono
+
+plot(V(1,:), V(2,:), 'rd', 'Linewidth', 2)
+hold on
+[m, n] = size(V);
+
+for k = 1:n
+    if (k==n)
+        k1 = 1;
+    else
+        k1 = k+1;
+    end
+    u = V(:,k); w = V(:,k1);
+    t = linspace(0,1,20)';
+    z = [];
+    for j = 1:20
+        z = [z u+t(j)*(w-u)];
+    end
+    plot(z(1,:), z(2,:), 'b', 'Linewidth', 3)
+    hold on
+end
+% Grafica circunferencia
+xc = [0 1/2]'; radio=1/2;
+aa = linspace(0,2*pi,50)';
+for j=1:50
+    cir(1,j)=xc(1)+radio*cos(aa(j));
+    cir(2,j)=xc(2)+radio*sin(aa(j));
+end
+plot(cir(1,:), cir(2,:), 'm', 'Linewidth', 3)
+axis equal
+hold on
+%--------------------------------------------------------------------------
+x=[0 0; 2 1; 2 3;0 6;-2 3; -2 1];
+% Puntos en coordenadas polares
+[w]=coordPolares(x);
+% Perimetro del polígono
+[per] = perimetro(w);
+[hx]=h(w);
+
+[x, fx, output] = puntosInteriores(perimetro,h, w, SIGM)
+    
