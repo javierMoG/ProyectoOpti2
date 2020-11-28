@@ -35,7 +35,7 @@ hx=[hx; x(1:n); 1-x(1:n)];
 hx=[hx; x(n+1:2*n); pi-x(n+1:2*n)];
 
 % Ángulos crecientes thetai<=thethai+1
-for k=1:n
+for k=1:n-1
     hx=[hx; x(n+k+1)-x(n+k)];
 end
 
