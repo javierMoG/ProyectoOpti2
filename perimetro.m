@@ -17,5 +17,6 @@ for i=1:n-1
 end
 %per=per+w(n)
 per=per+distanciaP(w(1), w(n+1), w(n), w(2*n));
+per = -per;
 end
 

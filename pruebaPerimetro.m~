@@ -4,7 +4,6 @@ close all
 
 x1= [0 0]'; x2 = [1/2 1/2]; x3 = [0 1]; x3 = [-1/2 1/2];
 
-
 V = [0 1/2 0 -1/2 ; 0 1/2 1 1/2];
 
 % Gráfica del polígono
@@ -39,8 +38,7 @@ plot(cir(1,:), cir(2,:), 'm', 'Linewidth', 3)
 axis equal
 hold on
 %--------------------------------------------------------------------------
-% x=[0 0; 2 1; 2 3;0 6;-2 3; -2 1];
-x =[0 0; 1 0; 1 1; 0 1]; 
+x=[0 0; 2 1; 2 3;0 6;-2 3; -2 1];
 % Puntos en coordenadas polares
 [w]=coordPolares(x);
 % Perimetro del polígono
@@ -48,13 +46,10 @@ x =[0 0; 1 0; 1 1; 0 1];
 % [hx]=h(w);
 
 [x, fx, output] = puntosInteriores('perimetro','h', w);
-n = length(x)/2;
-h(x)
 x_cart = [];
+n = length(x)/2;
 for i=1:n
-    [x_c, y_c] = pol2cart(x(i+n), x(i));
-    x_cart = [ x_cart; x_c y_c];
+    x_cart = [ p
 end
-graficaPoligono(x_cart')
 
     

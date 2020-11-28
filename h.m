@@ -22,6 +22,7 @@ for i=1:n-1
     for j=i+1:n
         rj=x(j);
         angj=x(n+j);
+        %Distancia del punto i a j      
         d=distanciaP(ri, angi, rj, angj);
         hx=[hx; 1-d];
         hx=[hx; d-0.4];
@@ -38,7 +39,7 @@ hx=[hx; x(n+1:2*n); pi-x(n+1:2*n)];
 for k=1:n-1
     hx=[hx; x(n+k+1)-x(n+k)];
 end
-
+% hx = [hx; -x(1); x(1)]
 end
 
     
